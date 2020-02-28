@@ -63,8 +63,6 @@ class Fence:
             else:
                 pointB = self.points[line_eqns_index + 1]
 
-            print(point)
-            print(pointA, pointB)
             # Check if point[x] is within pointA[x] and pointB[x].
             if (pointA[0] >= pointB[0]):
                 # pointA is more positive than pointB so check if point[x] is
@@ -78,18 +76,14 @@ class Fence:
 
             # Check if point[y] is within pointA[y] and pointB[y].
             if (pointA[1] >= pointB[1]):
-                print("pointA[1] >= pointB[1]")
                 # pointA is more positive than pointB so check if point[y] is
                 # between these.
                 if (point[1] <= pointA[1] and point[1] >= pointB[1]):
                     withinY = True
             elif (pointA[1] <= pointB[1]):
-                print("pointA[1] <= pointB[1]")
                 # pointA is less positive than pointB.
                 if (point[1] >= pointA[1] and point[1] <= pointB[1]):
                     withinY = True
-
-            print(withinX, withinY)
 
             if withinX and withinY:
                 return True
